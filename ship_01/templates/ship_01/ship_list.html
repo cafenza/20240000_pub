@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body style='margin:30px;'>
+    <table class= 'table table-striped'>
+    <tr>
+        <!-- 실정에 맞게 수정 -->
+        <td>번호</td>
+        <td>선박명</td>
+        <td>소유주</td>
+        <td>선박종류</td>
+        <td>길이</td>
+        <td>높이</td>
+        <td>폭</td>
+        <td>흘수선</td>
+    </tr>
+    {% for data in info %}
+    <tr>
+        <!-- 실정에 맞게 수정 -->
+        <td>{{ data.code }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.owner }}</td>
+        <td>{{ data.type }}</td>
+        <td>{{ data.length }}</td>
+        <td>{{ data.height }}</td>
+        <td>{{ data.width }}</td>
+        <td>{{ data.waterline }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+
+</html>

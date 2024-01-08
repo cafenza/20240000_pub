@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>멤버의 메인 페이지</h3>
+    <!-- 접속 상태 확인 -->
+    {% if user.is_authenticated %}
+    <p>
+        <a class='nav-link' href="{% url 'logout' %}">
+        {{ user.username }} 님 반갑습니다. (로그아웃)
+        </a>
+    </p>
+    {% else %}
+    <p>현재 상태 : Guest</p>
+    {% endif %}
+
+</body>
+
+</html>

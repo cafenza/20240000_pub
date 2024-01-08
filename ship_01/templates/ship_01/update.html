@@ -1,0 +1,70 @@
+{% extends 'ship_01/index.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>수정</h1>
+    <table class="table table-light table-bordered">
+        <thead>
+            <tr>                
+                <th scope="col">번호</th>
+                <th scope="col">선박명</th>
+                <th scope="col">소유주</th>
+                <th scope="col">선박종류</th>
+                <th scope="col">길이</th>
+                <th scope="col">높이</th>
+                <th scope="col">폭</th>
+                <th scope="col">흘수선</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in shiplist %}
+            <tr>                
+                <td>{{ data.code }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.owner }}</td>
+                <td>{{ data.type }}</td>
+                <td>{{ data.length }}</td>
+                <td>{{ data.height }}</td>
+                <td>{{ data.width }}</td>
+                <td>{{ data.waterline }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div class="mb-3" style='text-align:center;'>
+        <ul class='pagination'>
+            {% for i in page_range %}
+            <li>
+                <a href='?page={{ i }}'>
+                    {{ i }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="code" class="form-label">수정할 선박 번호를 선택하세요 : </label>
+            <input type="text" name="code" id="'code" ><br>
+            <label for="name" class="form-label">선박명 : </label><input type="text" name="name"  id="name" required>
+            <label for="owner" class="form-label">소유주 : </label><input type="text" name="owner"  id="owner">
+            <label for="type" class="form-label">선박종류 : </label><input type="text" name="type"  id="type">
+            <label for="length" class="form-label">길이 : </label><input type="text" name="length"  id="length" pattern="[0-9]+">
+            <label for="height" class="form-label">높이 : </label><input type="text" name="height"  id="height" pattern="[0-9]+">
+            <label for="width" class="form-label">폭 : </label><input type="text" name="width"  id="width" pattern="[0-9]+">
+            <label for="waterline" class="form-label">흘수선 : </label><input type="text" name="waterline"  id="waterline" pattern="[0-9]+">
+            <input type="submit" value="수정" class="btn btn-warning mb-3">
+        </form>
+
+        
+        <br>
+        <button class="btn btn-dark" onclick="location.href='/'">홈으로</button>
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block update %}
+{% endblock%}

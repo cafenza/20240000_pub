@@ -1,0 +1,30 @@
+{% extends 'ship_01/index.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% if user.is_authenticated %}
+        <h2>{{ user.username }} 님 반갑습니다.
+            <a class='nav-link' href="{% url 'logout' %}">
+로그아웃
+                </a>
+                
+            </h2>
+        {% else %}
+        <h2>현재 상태 : Guest</h2>
+        <button class = "btn btn-primary" onclick="location.href='member/login'">로그인</button>
+    {% endif %}
+                <h1>선박 관리 프로그램</h1>
+                <ul>
+                        <li><h3><a href="/select/" >검색</a></h3></li>
+                        {% if user.is_authenticated %}
+                        <li><h3><a href="/insert/" >입력</a></h3></li>
+                        <li><h3><a href="/update/" >수정</a></h3></li>
+                        <li><h3><a href="/delete/" >삭제</a></h3></li>
+                        {% endif %}
+                    </ul>
+   
+                </div>
+                
+                    
+{% endblock %}

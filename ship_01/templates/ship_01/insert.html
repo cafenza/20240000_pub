@@ -1,0 +1,21 @@
+{% extends 'ship_01/index.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>입력</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="name" class="form-label">선박명 : </label><input type="text" name="name" class="form-control" id="name" required>
+    <label for="owner" class="form-label">소유주 : </label><input type="text" name="owner" class="form-control" id="owner">
+    <label for="type" class="form-label">선박종류 : </label><input type="text" name="type" class="form-control" id="type">
+    <label for="length" class="form-label">길이 : </label><input type="text" name="length" class="form-control" id="length" pattern="[0-9]+">
+    <label for="height" class="form-label">높이 : </label><input type="text" name="height" class="form-control" id="height" pattern="[0-9]+">
+    <label for="width" class="form-label">폭 : </label><input type="text" name="width" class="form-control" id="width" pattern="[0-9]+">
+    <label for="waterline" class="form-label">흘수선 : </label><input type="text" name="waterline" class="form-control" id="waterline" pattern="[0-9]+">    
+    <input type="submit" value="입력" class="btn btn-success mb-3">
+    <br>
+    <button class="btn btn-dark" onclick="location.href='/'">홈으로</button>
+
+        </form>
+    </div>
+{% endblock %}
