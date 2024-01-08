@@ -25,9 +25,8 @@ SECRET_KEY = "django-insecure-br95k7(#!4h5a464r2-(qg1s==lqta&4q4qy*q@ibvl2=4#=c3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".cloudtype.app", "0.0.0.0"]
+CSRF_TRUSTED_ORIGINS = ['https://*.cloudtype.app']
 # Application definition
 
 INSTALLED_APPS = [
@@ -77,14 +76,14 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "db.sqlite3",
-        'ENGINE': "django.db.backends.mysql",
-        'NAME': "python_db",
-        'HOST': "localhost",
-        'PORT': "3306",
-        'USER': "maria",
-        'PASSWORD': "1234",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        # 'ENGINE': "django.db.backends.mysql",
+        # 'NAME': "python_db",
+        # 'HOST': "localhost",
+        # 'PORT': "3306",
+        # 'USER': "maria",
+        # 'PASSWORD': "1234",
     }
 }
 
