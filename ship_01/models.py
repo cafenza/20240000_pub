@@ -11,9 +11,9 @@ class ShipList(models.Model):
     width = models.IntegerField(db_column='WIDTH', blank=True, null=True)  # Field name made lowercase.
     waterline = models.IntegerField(db_column='WATERLINE', blank=True, null=True)  # Field name made lowercase.
 
-    # class Meta:
-    #     managed = False
-    #     db_table = 'ship_list'
+    class Meta:
+        managed = False
+        db_table = 'ship_list'
 
 
 class UserList(models.Model):
@@ -23,7 +23,7 @@ class UserList(models.Model):
     tel = models.CharField(db_column='TEL', max_length=20, blank=True, null=True)  # Field name made lowercase.
     e_mail = models.CharField(db_column='E_MAIL', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
-    # class Meta:
-    #     managed = False
-    #     db_table = 'user_list'
+    class Meta:
+        managed = False
+        db_table = 'user_list'
 
